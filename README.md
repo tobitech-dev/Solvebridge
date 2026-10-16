@@ -67,3 +67,4 @@ Put the variables in a `.env.local` file first (copy `.env.example`).
 - Each IP can send 5 problems per hour. Visitor IPs are stored only as a keyed hash.
 - Uploaded images are re-encoded in the browser, then checked on the server (type, size, file signature) and are served only to a signed-in admin.
 - Rotate `ADMIN_PASSWORD` and `JWT_SECRET` in Vercel whenever you want to sign everyone out.
+- Deployed on Vercel.
