@@ -1,0 +1,13 @@
+{
+  "name": "solvebridge",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Collect problems that technology could solve. Only the admin can read them.",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.8.0"
+  }
+}

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="SolveBridge">
+  <rect width="64" height="64" rx="12" fill="#0f1c2e"/>
+  <path d="M10 42 Q32 6 54 42" fill="none" stroke="#c83a14" stroke-width="5" stroke-linecap="round"/>
+  <g stroke="#fbfcfd" stroke-width="2.5" stroke-linecap="round" opacity="0.9">
+    <line x1="21" y1="28.5" x2="21" y2="43"/>
+    <line x1="32" y1="24" x2="32" y2="43"/>
+    <line x1="43" y1="28.5" x2="43" y2="43"/>
+  </g>
+  <line x1="6" y1="45" x2="58" y2="45" stroke="#fbfcfd" stroke-width="4" stroke-linecap="round"/>
+</svg>

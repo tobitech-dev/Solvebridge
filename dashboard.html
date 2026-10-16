@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Submissions | SolveBridge</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="admin.css">
+  <script src="dashboard.js" defer></script>
+</head>
+<body>
+  <header class="site-head wrap wide bar">
+    <a class="brand" href="/dashboard"><img src="logo.svg" alt="" width="30" height="30">SolveBridge</a>
+    <button class="btn btn-ghost small" type="button" id="signout">Sign out</button>
+  </header>
+
+  <main class="wrap wide">
+    <h1 class="page-title">Submissions</h1>
+
+    <div class="toolbar">
+      <div class="tabs" role="group" aria-label="Filter by status">
+        <button class="tab" type="button" data-status="all" aria-pressed="true">All <b id="n-all">0</b></button>
+        <button class="tab" type="button" data-status="new" aria-pressed="false">New <b id="n-new">0</b></button>
+        <button class="tab" type="button" data-status="reviewed" aria-pressed="false">Reviewed <b id="n-reviewed">0</b></button>
+        <button class="tab" type="button" data-status="solved" aria-pressed="false">Solved <b id="n-solved">0</b></button>
+      </div>
+      <div class="search">
+        <label class="sr" for="q">Search submissions</label>
+        <input class="input" id="q" type="search" placeholder="Search name, email, country or problem" autocomplete="off">
+      </div>
+    </div>
+
+    <p class="empty" id="state" hidden></p>
+    <ol class="ledger" id="ledger"></ol>
+
+    <nav class="pager" id="pager" aria-label="Pages" hidden>
+      <button class="btn btn-ghost small" type="button" id="prev">Previous</button>
+      <span id="page-label"></span>
+      <button class="btn btn-ghost small" type="button" id="next">Next</button>
+    </nav>
+  </main>
+
+  <dialog id="viewer" aria-label="Attached image">
+    <img id="viewer-img" alt="Image attached to the submission">
+    <form method="dialog"><button class="btn" type="submit">Close</button></form>
+  </dialog>
+
+  <p class="toast" id="toast" role="status"></p>
+
+  <footer class="site-foot wrap wide">SolveBridge</footer>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin sign in | SolveBridge</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="admin.css">
+  <script src="login.js" defer></script>
+</head>
+<body>
+  <header class="site-head wrap">
+    <a class="brand" href="/"><img src="logo.svg" alt="" width="30" height="30">SolveBridge</a>
+  </header>
+
+  <main class="wrap login">
+    <h1 class="title">Admin sign in</h1>
+    <form id="login-form" novalidate>
+      <label for="password">Password</label>
+      <input class="input" id="password" name="password" type="password" autocomplete="current-password" required>
+      <p class="notice" id="login-error" role="alert" hidden></p>
+      <button class="btn" type="submit" id="login-submit">Sign in</button>
+    </form>
+  </main>
+
+  <footer class="site-foot wrap">SolveBridge</footer>
+</body>
+</html>

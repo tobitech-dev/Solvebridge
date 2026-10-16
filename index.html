@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SolveBridge: describe a problem technology could solve</title>
+  <meta name="description" content="Describe a problem that software or technology could solve and send it straight to the developer.">
+  <link rel="icon" href="logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap">
+  <link rel="stylesheet" href="style.css">
+  <script src="form.js" defer></script>
+</head>
+<body>
+  <header class="site-head wrap">
+    <a class="brand" href="/"><img src="logo.svg" alt="" width="30" height="30">SolveBridge</a>
+  </header>
+
+  <main class="wrap">
+    <h1 class="title">Got a problem that software could solve? Describe it here.</h1>
+    <p class="lede">Tell me what is going wrong in your business, your community or your daily life. I read every message, and I reply when I can help build something.</p>
+
+    <svg class="bridge" viewBox="0 20 800 110" aria-hidden="true" focusable="false">
+      <path class="arch-ghost" d="M40 100 Q400 -40 760 100"/>
+      <path class="arch" id="arch" pathLength="100" d="M40 100 Q400 -40 760 100"/>
+      <line class="hanger" data-field="name"    x1="184" y1="55.2" x2="184" y2="100"/>
+      <line class="hanger" data-field="country" x1="328" y1="32.8" x2="328" y2="100"/>
+      <line class="hanger" data-field="email"   x1="472" y1="32.8" x2="472" y2="100"/>
+      <line class="hanger" data-field="problem" x1="616" y1="55.2" x2="616" y2="100"/>
+      <line class="deck" x1="0" y1="100" x2="800" y2="100"/>
+      <rect class="pier" x="20" y="100" width="40" height="22"/>
+      <rect class="pier" x="740" y="100" width="40" height="22"/>
+    </svg>
+    <div class="ends" aria-hidden="true"><span>Your problem</span><span>A working solution</span></div>
+
+    <form id="problem-form" class="letter" novalidate>
+      <p class="sentence">
+        My name is
+        <label class="sr" for="name">Full name</label><input class="inline w-name" id="name" name="name" type="text" autocomplete="name" placeholder="your full name" required minlength="2" maxlength="100">
+        and I am writing from
+        <label class="sr" for="country">Country</label><select class="inline w-country" id="country" name="country" autocomplete="country-name" required><option value="">your country</option></select>.
+      </p>
+      <p class="sentence">
+        You can reach me at
+        <label class="sr" for="email">Email address</label><input class="inline w-email" id="email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="you@example.com" required maxlength="254">.
+      </p>
+
+      <div class="ask-block">
+        <label class="ask" for="problem">The problem I would like solved</label>
+        <p class="hint" id="problem-hint">Say what is going wrong, who it affects and what you have already tried. A few sentences is enough.</p>
+        <textarea class="field" id="problem" name="problem" rows="7" required minlength="20" maxlength="5000" aria-describedby="problem-hint problem-count"></textarea>
+        <p class="count" id="problem-count">0 of 5000</p>
+      </div>
+
+      <div class="photo">
+        <input class="sr" id="image" name="image" type="file" accept="image/jpeg,image/png,image/webp">
+        <label class="btn btn-ghost" for="image">Add a photo or screenshot</label>
+        <span class="hint" id="image-hint">Optional. JPG, PNG or WebP.</span>
+        <div class="preview" id="preview" hidden>
+          <img id="preview-img" alt="Preview of the image you selected" width="72" height="72">
+          <button class="link" type="button" id="remove-image">Remove image</button>
+        </div>
+      </div>
+
+      <div class="hp" aria-hidden="true">
+        <label>Leave this field empty <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+      </div>
+
+      <p class="notice" id="form-error" role="alert" hidden></p>
+
+      <div class="submit-row">
+        <button class="btn" type="submit" id="submit">Send my problem</button>
+        <p class="fine">Only the site owner can see what you send.</p>
+      </div>
+    </form>
+  </main>
+
+  <footer class="site-foot wrap">SolveBridge</footer>
+</body>
+</html>

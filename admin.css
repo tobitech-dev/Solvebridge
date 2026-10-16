@@ -1,0 +1,280 @@
+/* SolveBridge: admin login and dashboard (loads after style.css) */
+
+.input {
+  display: block;
+  width: 100%;
+  padding: 0.8rem 1rem;
+  font: inherit;
+  color: var(--ink);
+  background: var(--paper);
+  border: 2px solid var(--ink);
+  border-radius: var(--radius);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--span);
+  box-shadow: 0 0 0 4px rgba(200, 58, 20, 0.18);
+}
+
+/* Login */
+
+.login {
+  min-height: 62vh;
+  display: grid;
+  align-content: center;
+  padding: 2rem 0;
+}
+
+.login .title {
+  margin: 0 0 1.5rem;
+  font-size: clamp(1.7rem, 5vw, 2.5rem);
+}
+
+.login form {
+  max-width: 24rem;
+}
+
+.login label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 700;
+}
+
+.login .btn {
+  margin-top: 1.1rem;
+}
+
+/* Dashboard header */
+
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.btn.small {
+  padding: 0.55rem 1rem;
+  font-size: 0.95rem;
+}
+
+.page-title {
+  margin: 2.25rem 0 0;
+  font-family: var(--font-head);
+  font-stretch: 125%;
+  font-weight: 800;
+  font-size: clamp(1.6rem, 4.5vw, 2.4rem);
+  line-height: 1.1;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 1.5rem;
+  margin: 1.5rem 0 1.75rem;
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tab {
+  padding: 0.5rem 0.95rem;
+  font: 700 0.98rem/1.2 var(--font-body);
+  color: var(--ink);
+  background: transparent;
+  border: 2px solid var(--ink);
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+.tab b {
+  margin-left: 0.35rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.tab[aria-pressed="true"] {
+  color: #fff;
+  background: var(--ink);
+}
+
+.search {
+  flex: 1 1 18rem;
+  max-width: 26rem;
+}
+
+/* Ledger of submissions */
+
+.ledger {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 2px solid var(--ink);
+}
+
+.entry {
+  display: grid;
+  grid-template-columns: 15rem 1fr;
+  gap: 1rem 2rem;
+  padding: 1.5rem 0 1.5rem 1.2rem;
+  background: rgba(251, 252, 253, 0.6);
+  border-bottom: 1px solid var(--line);
+  border-left: 6px solid var(--span);
+}
+
+.entry.s-reviewed { border-left-color: var(--river); }
+.entry.s-solved   { border-left-color: var(--ok); }
+
+.who h2 {
+  margin: 0 0 0.2rem;
+  font-family: var(--font-head);
+  font-stretch: 112%;
+  font-weight: 800;
+  font-size: 1.15rem;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
+.who p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.98rem;
+  overflow-wrap: anywhere;
+}
+
+.who time {
+  display: block;
+  margin-top: 0.5rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.problem {
+  margin: 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.problem.clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.thumb {
+  display: block;
+  margin-top: 1rem;
+  padding: 0;
+  background: none;
+  border: 2px solid var(--ink);
+  border-radius: var(--radius);
+  cursor: zoom-in;
+}
+
+.thumb img {
+  display: block;
+  width: 120px;
+  height: 90px;
+  object-fit: cover;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.25rem;
+  margin-top: 1.1rem;
+}
+
+.actions select {
+  width: auto;
+  padding: 0.45rem 0.7rem;
+  font-weight: 700;
+}
+
+.danger {
+  color: var(--span-dark);
+}
+
+.empty {
+  margin: 2.5rem 0;
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+
+.pager {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  margin: 2rem 0 0;
+}
+
+.pager button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Image viewer */
+
+dialog {
+  max-width: min(92vw, 60rem);
+  padding: 0;
+  background: transparent;
+  border: 0;
+}
+
+dialog::backdrop {
+  background: rgba(15, 28, 46, 0.82);
+}
+
+dialog img {
+  display: block;
+  max-width: 100%;
+  max-height: 80vh;
+  margin: 0 auto;
+  background: #fff;
+}
+
+dialog form {
+  margin-top: 0.9rem;
+  text-align: center;
+}
+
+/* Toast */
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 1.5rem;
+  transform: translateX(-50%);
+  margin: 0;
+  padding: 0.7rem 1.1rem;
+  color: #fff;
+  background: var(--ink);
+  border-radius: var(--radius);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.toast.show {
+  opacity: 1;
+}
+
+@media (max-width: 720px) {
+  .entry {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .search {
+    max-width: none;
+  }
+}
