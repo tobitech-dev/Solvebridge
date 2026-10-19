@@ -9,7 +9,6 @@
   const stateMsg = $('state');
   const pager = $('pager');
 
-  /* Small DOM helper. Everything goes in with textContent, never innerHTML. */
   function h(tag, attrs = {}, ...kids) {
     const node = document.createElement(tag);
     for (const [key, value] of Object.entries(attrs)) {
@@ -166,7 +165,7 @@
 
     try {
       const data = await api(`/api/submissions?${params}`);
-      if (token !== loadToken) return; // a newer request replaced this one
+      if (token !== loadToken) return; 
 
       ['all', 'new', 'reviewed', 'solved'].forEach((key) => {
         $(`n-${key}`).textContent = data.counts[key];
@@ -194,7 +193,7 @@
     $('viewer').showModal();
   }
 
-  /* Events */
+
 
   document.querySelectorAll('.tab').forEach((tab) => {
     tab.addEventListener('click', () => {
