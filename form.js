@@ -28,9 +28,9 @@
     'Vatican City', 'Venezuela', 'Vietnam', 'Yemen', 'Zambia', 'Zimbabwe', 'Other',
   ];
 
-  const MAX_INPUT_BYTES = 12 * 1024 * 1024; // reject huge originals before compressing
-  const MAX_EDGE = 1600;                    // longest side after compressing
-  const MAX_DATA_URL = 1800000;             // stays under the server limit
+  const MAX_INPUT_BYTES = 12 * 1024 * 1024; 
+  const MAX_EDGE = 1600;                    
+  const MAX_DATA_URL = 1800000;             
   const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
   const form = document.getElementById('problem-form');
@@ -54,7 +54,7 @@
 
   let imageDataUrl = null;
 
-  /* Country list */
+  
   const frag = document.createDocumentFragment();
   COUNTRIES.forEach((c) => {
     const o = document.createElement('option');
@@ -64,7 +64,7 @@
   });
   els.country.append(frag);
 
-  /* Validation rules, one per field */
+  
   const rules = {
     name: () => els.name.value.trim().length >= 2,
     country: () => els.country.value !== '',
@@ -79,7 +79,7 @@
     problem: 'Describe the problem in at least 20 characters.',
   };
 
-  /* The bridge builds itself as fields are completed */
+  
   function updateBridge() {
     let done = 0;
     els.hangers.forEach((h) => {
@@ -112,7 +112,7 @@
     });
   });
 
-  /* Image: read, shrink and re-encode as JPEG in the browser */
+  
   function loadImage(file) {
     return new Promise((resolve, reject) => {
       const url = URL.createObjectURL(file);
@@ -139,7 +139,7 @@
     canvas.width = w;
     canvas.height = h;
     const ctx = canvas.getContext('2d');
-    ctx.fillStyle = '#ffffff'; // flatten transparency
+    ctx.fillStyle = '#ffffff'; 
     ctx.fillRect(0, 0, w, h);
     ctx.drawImage(img, 0, 0, w, h);
 
@@ -191,7 +191,7 @@
     els.image.focus();
   });
 
-  /* Submit */
+  
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
     showError('');
